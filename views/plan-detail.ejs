@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        body {
+            color: black;
+            background-color: whitesmoke;
+            margin: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            color: black;
+            font-weight: bold;
+        }
+
+        span {
+            font-size: 16px;
+            color: rgb(3, 3, 179);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <fieldset
+            style="border: 2px solid rgb(3, 3, 179); width: auto; padding:30px 80px; border-radius: 20px; background-color: white;">
+            <legend style="color: rgb(3, 3, 179); font-weight: bold;">
+                <%= student.surname %> Details...
+                    <a href="/students" class="btn btn-sm btn-dark float-right mt-2"
+                        style="margin-right: 30px; background-color: rgb(3, 3, 179);">Go
+                        back</a>
+            </legend>
+            <div class="row">
+                <div class="col-sm-8">
+                    <p>
+                        Plan Name : <span>
+                            <%= plan.id %>
+                        </span>
+
+                    </p>
+                    <p>
+                        Plan Description : <span>
+                            <%= plan.description %>
+                        </span>
+
+                    </p>
+                    <p>
+                        Plan Prize : <span>
+                            <%= plan.price %></span>
+
+                    </p>
+                    <!-- <p>
+                        Other Name : <span>
+                            <%= student.other_name %>
+                        </span>
+
+                    </p>
+                    <p>
+                        Age : <span>
+                            <%= student.age %>
+                        </span>
+
+                    </p>
+                    <p>
+                        Registration Number : <span>
+                            <%= student.reg_no %>
+                        </span>
+
+                    </p>
+                    <p>
+                        Date joined : <span>
+                            <%= student.dateForDisplay(student.date_joined) %>
+                        </span>
+
+                    </p>
+                    <p>
+                        Email address : <span>
+                            <%= student.email %>
+                        </span>
+
+                    </p>
+                    <p>
+                        Phone number : <span>
+                            <%= student.phone %>
+                        </span>
+
+                    </p>
+                    <p>
+                        Disability : <span>
+                            <%= student.disability %>
+                        </span>
+
+                    </p>
+                    <p>
+                        Gender : <span>
+                            <%= student.gender %>
+                        </span>
+
+                    </p>
+                    <p>
+                        Address : <span>
+                            <%= student.address %>
+                        </span>
+
+                    </p>
+                    <p>
+                        Password : <span>
+                            <%= student.password %>
+                        </span>
+
+                    </p>
+                    <p>
+                        Plan : <span>
+                            <%= student.plan %>
+                        </span>
+
+                    </p> -->
+                </div>
+                <div class="col-sm-4">
+                    <img width="400" src="/<%= student.passport %>" class="img-fluid" alt="Passport">
+                </div>
+            </div>
+            <a href="" class="btn btn-sm btn-dark float-right mt-2" style="margin-right: 30px; background-color: grey;"
+                onclick="window.print()">Print</a>
+        </fieldset>
+    </div>
+
+    <script src="/bootstrap/js/jquery.min.js"></script>
+    <script src="/bootstrap/js/popper.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <title>Register</title>
+</head>
+<style>
+    #pics {
+        position: relative;
+        margin-left: 42%;
+    }
+
+    #output {
+        border-radius: 50%;
+        height: 195px;
+        width: 195px;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <div class="container my-3">
+        <h1>Register with us today</h1>
+        <hr>
+        <form action="" class="row" method="post" id="instructor-form" enctype="multipart/form-data">
+            <div id="pics" class="form-group">
+                <p><input type="file" class="form-control" required accept="image/*" name="passport" id="passport"
+                        onchange="loadFile(event)" style="display: none;"></p>
+                <p>
+                    <label for="passport" style="cursor: pointer;"><img id="output" class="img-fluid"
+                            src="/img/unknown.png" alt="image"></label>
+                </p>
+                <p style="margin-left: 45px; font-size: 25px;">Passport</p>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="surname">Surname</label>
+                <input type="text" class="form-control" id="surname" name="surname" placeholder="Enter your surname">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="first_name">First name</label>
+                <input type="text" class="form-control" id="first_name" name="first_name"
+                    placeholder="Enter your first name">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="other_name">Other name</label>
+                <input type="text" class="form-control" id="other_name" name="other_name"
+                    placeholder="Enter your other name">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="phone">Phone</label>
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="disability">Disability</label>
+                <input type="text" class="form-control" id="disability" name="disability">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="dob">Date of birth</label>
+                <input type="date" class="form-control" id="dob" name="dob" placeholder="Date of birth">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="date_joined">Date Joined</label>
+                <input type="date" class="form-control" id="date_joined" name="date_joined" placeholder="Date joined">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="address">Address</label>
+                <textarea name="address" class="form-control"></textarea>
+            </div>
+            <div class="form-group col-sm-6">
+                <label>Gender</label><br>
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" value="Male" name="gender">Male
+                    </label>
+                </div>
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" value="Female" name="gender">Female
+                    </label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="plan">Plan</label>
+                <select class="form-control" name="plan_id" id="plan_id">
+                    <option value="">Select a plan</option>
+                    <% for( let plan of plans ) { %>
+                        <option value="<%= plan.id %> ">
+                            <%= plan.name %>
+                        </option>
+                        <% } %>
+                </select>
+            </div>
+            <!-- <div class="form-group col-sm-6">
+                <label for="passport">Passport</label>
+                <input type="file" class="form-control" id="passport" name="passport" required accept="image/*">                    
+            </div> -->
+            <div class="form-group col-sm-6">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required
+                    oninput="confirmation() " placeholder="Enter your password">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" class="form-control" id="confirm_password" name="confirm_password" required
+                    oninput="matched() " placeholder="Confirm your password">
+                <p id="validate"></p>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary float-right">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="/bootstrap/js/jquery.min.js"></script>
+    <script src="/bootstrap/js/popper.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/validation.js"></script>
+
+</body>
+
+</html>
